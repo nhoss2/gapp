@@ -5,17 +5,15 @@
     <title>Gapp</title>
     <link href="css/css.css" rel="stylesheet" type="text/css">
 	<link href='http://fonts.googleapis.com/css?family=Cuprum&v2' rel='stylesheet' type='text/css'>
-    <link href="prettify/prettify.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="nav.js"></script>
-    <script type="text/javascript" src="prettify/prettify.js"></script>
 </head>
 <body>
 
     <header>
         <div id="header_left">
-            <h1>Gapp</h1>
-            <h2>Make a page for your github repository</h2>
-            <p>Gapp is a simple template that you can use to create a nice looking page that showcases your repository on github. It is much faster than starting from scratch and with github pages you dont have to worry about hosting.</p>
+            <h1>Repo Title</h1>
+            <h2>Optional sub heading</h2>
+            <p>Short description of repo here</p>
         </div>
         <div id="header_right">
             <a href="#" class="button">Download</a>
@@ -26,11 +24,7 @@
     <div id="nav_container">
         <div id="nav">
             <a href="#introduction">Introduction</a>
-            <a href="#getstarted">Get Started</a>
-            <a href="#layout">Layout</a>
             <a href="#code">Code</a>
-            <a href="#header">Header</a>
-            <a href="#navigation">Navigation</a>
         </div><!--nav-->
     </div>
 
@@ -38,113 +32,56 @@
 
 <h1><a id="introduction" href="#introduction">Introduction</a></h1>
 
-<p>Gapp was made to let anyone quickly make a page which describes what their script/app does. You can basically put your <code>README</code> file here by manually converting the markdown into html by using something like <a href="http://showdown.im">showdown</a> or <a href="http://johnmacfarlane.net/pandoc/index.html">pandoc</a>. Note you will need to make a few changes to get the navigation to work.</p>
+<p class="whole_line">Nam at sem eu mi iaculis consequat. Suspendisse dui nulla, pulvinar a iaculis non, dapibus vitae arcu. Nunc malesuada pretium orci eget tempor. Nullam non magna justo. Duis ac purus metus. Cras egestas semper sagittis. Quisque neque justo, ornare eu viverra facilisis, pharetra nec dui. Aenean eros metus, fringilla vitae ullamcorper id, ultrices nec quam. Phasellus ut sem libero. Duis quis neque in eros aliquet eleifend a quis elit. Aenean fringilla cursus nibh, eu adipiscing lacus varius nec. Maecenas urna nulla, condimentum interdum laoreet non, semper dictum ipsum. Fusce at luctus risus. Nulla vel dolor elit. Cras non viverra tellus. Duis tempor nunc sit amet enim tristique luctus</p>
 
-<p>The css for Gapp in written in <a href="http://lesscss.org">LESS</a>, the source is available under the css folder.</p>
+<p>Nam at sem eu mi iaculis consequat. Suspendisse dui nulla, pulvinar a iaculis non, dapibus vitae arcu. Nunc malesuada pretium orci eget tempor. Nullam non magna justo. Duis ac purus metus. Cras egestas semper sagittis. Quisque neque justo, ornare eu viverra facilisis, pharetra nec dui. Aenean eros metus, fringilla vitae ullamcorper id, ultrices nec quam. Phasellus ut sem libero. Duis quis neque in eros aliquet eleifend a quis elit. Aenean fringilla cursus nibh, eu adipiscing lacus varius nec. Maecenas urna nulla, condimentum interdum laoreet non, semper dictum ipsum. Fusce at luctus risus. Nulla vel dolor elit. Cras non viverra tellus. Duis tempor nunc sit amet enim tristique luctus</p>
+<pre>class Person
+  attr_reader :name, :age
+  def initialize(name, age)
+    @name, @age = name, age
+  end
+  def &lt;=&gt;(person) # Comparison operator for sorting
+    @age &lt;=&gt; person.age
+  end
+  def to_s
+    "#@name (#@age)"
+  end
+end
 
-<h1><a id="getstarted" href="#getstarted">Get Started</a></h1>
+group = [
+  Person.new("Bob", 33), 
+  Person.new("Chris", 16), 
+  Person.new("Ash", 23) 
+]
 
-<p>Just <code>git clone</code> <a href="http://github.com">the repository</a> or <a href="http://github.com">download it</a>. The master branch has a sample index.html, css files and a javascript file.</p>
-
-<h1><a id="layout" href="#layout">Layout</a></h1>
-
-<p>The page is made up of three sections - Header, navigation and content. Both the header and navigation are optional.</p>
-
-<pre class="prettyprint"><code>&lt;header&gt;
-&lt;/header&gt;
-&lt;div id="nav_container"&gt;
-&lt;/div&gt;
-&lt;div id="content"&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p class="whole_line">The page layout is designed for readability. By default, all text wrapped in <code>&lt;p&gt;</code> tags are on the left half of the page and all code wrapped in <code>&lt;pre&gt;</code> tags are on the right side. If you want a paragraph to go for the entire length of the page add the class <code>&lt;p class="whole_line"&gt;</code>.</p>
-
-<p><strong>Typography:</strong></p>
-
-<h1>This is a header 1</h1>
-
-<h2>This is a header 2</h2>
-
-<h3>This is a header 3</h3>
-
-<h4>This is a header 4</h4>
-
-<h5>This is a header 5</h5>
-
-<h6>This is a header 6</h6>
+puts group.sort.reverse
+</pre>
 
 <h1><a id="code" href="#code">Code</a></h1>
 
-<p>There are two ways of displaying code:</p>
+<p>Nunc eget magna arcu, quis rutrum justo. Sed ipsum mauris, dictum nec mattis et, pretium sed sem. Donec non leo ut lacus laoreet placerat. Mauris euismod elementum odio, at tempor ligula molestie vitae. Vivamus dignissim cursus nunc, sed pellentesque mauris aliquet sed. In id blandit orci. Vivamus rhoncus mauris sed tortor facilisis vitae auctor erat vehicula. Sed neque leo, euismod bibendum mollis ultrices, condimentum in dui. Praesent pharetra neque sit amet dui posuere fringilla. Mauris non felis neque, fermentum adipiscing erat. Nam fringilla orci id elit euismod laoreet. Vivamus posuere elementum tempor. Sed varius erat eu velit suscipit facilisis. Praesent eu tellus est. Etiam volutpat porta mattis.</p> 
 
-<p><strong><code>&lt;code&gt;</code></strong>: This is for displaying code in line with the paragraph and <code>look like this</code>.</p>
-
-<p><strong><code>&lt;pre&gt;</code></strong>: This is to display code on the right side.</p>
-
-<pre><code>This is what a pre looks like
-</code></pre>
-
-<p>If you want the <code>&lt;pre&gt;</code> to go for the entire width of the page, add the class <code>whole_line</code> to it: <code>&lt;pre class="whole_line"&gt;</code></p>
-
-<pre class="whole_line">
-This pre goes for the whole line
+<pre>window.onload = function() {
+    function check_location() {
+        for (var i = 0; i &lt; h1s.length; i++) {
+            if (h1s[(i+1)] != undefined){
+                if ((scroll_location &gt; headinglocations[i]) &amp;&amp; (scroll_location &lt; headinglocations[(i + 1)])){
+                    closestheading = h1s[i];
+                }
+                else if (scroll_location &lt; headinglocations[0]){
+                    closestheading = 0;
+                }
+            }
+            else if (scroll_location &gt; headinglocations[i]){
+                closestheading = h1s[i];
+            }
+        }
+        update_nav();
+    }
 </pre>
 
-<p class="whole_line">Lastly, if you want syntax highlighting on your code, you need to add the class  <code>&lt;pre class="prettyprint"&gt;</code>. This uses <a href="http://code.google.com/p/google-code-prettify">google-code-prettify</a>. </p>
+<p>Sed a turpis sit amet quam accumsan tincidunt ut at orci. Integer quam neque, laoreet sed interdum eget, mollis nec lorem. Curabitur dapibus, velit ut egestas malesuada, nisl magna viverra est, nec auctor lorem tortor a velit. Curabitur eu orci eu purus bibendum lobortis ut vel nunc. Fusce purus urna, lobortis sit amet vulputate id, viverra et felis. Phasellus volutpat dapibus nibh ac fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed ornare semper nisl, id consequat sapien commodo non. Ut feugiat ultricies adipiscing. Pellentesque auctor mollis egestas. Quisque pharetra imperdiet nunc, suscipit feugiat dolor molestie sodales. Quisque pellentesque ligula nec libero tristique semper. Maecenas leo massa, varius quis imperdiet eget, semper sed dui. Morbi tempus fringilla tortor, a luctus massa consectetur sit amet. Maecenas et dapibus nisi.</p>
 
-<p class="whole_line">I have used the <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/styles/sunburst.css">sunburst theme</a> for prettify. The code that initializes prettify is inside <code>nav.js</code>. </p>
-
-<h1><a id="header" href="#header">Header</a></h1>
-
-<p>The header is where you have all the basic information about your repository. It is wrapped inside <code>&lt;header&gt;</code> tags. It is split into two sections: <code>&lt;div id="header_left"&gt;</code> and <code>&lt;div id="header_right"&gt;</code>.</p>
-
-<pre class="prettyprint"><code>&lt;header&gt;
-    &lt;div id="header_left"&gt;
-    ...
-    &lt;/div&gt;
-    &lt;div id="header_right"&gt;
-    ...
-    &lt;/div&gt;
-&lt;/header&gt;
-</code></pre>
-
-<p>Header left is where you have the name, sub heading and a little description of your repository.</p>
-
-<pre class="prettyprint"><code>&lt;div id="header_left"&gt;
-    &lt;h1&gt;Repository Name Here&lt;/h1&gt;
-    &lt;h2&gt;Optional sub heading&lt;/h2&gt;
-    &lt;p&gt;A description of your repository&lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p>Header right is where you have a button to your repository and a download link. Each button is a simple <code>&lt;a class="button"&gt;</code> tag.</p>
-
-<pre class="prettyprint"><code>&lt;div id="header_right"&gt;
-    &lt;a href="https://github.com/username/repo-name/zipball/master"&gt;Download&lt;/a&gt;
-    &lt;a href="https://github.com/username/repo-name/"&gt;View on Github&lt;/a&gt;
-&lt;/div&gt;
-</code></pre>
-
-<h1><a id="navigation" href="#navigation">Navigation</a></h1>
-
-<p>The navigation bar combined with its javascript counterpart <code>nav.js</code> works as a detachable bar that auto updates the current position. It consists of two divs: <code>#nav_container</code> and <code>#nav</code>. Each link inside the nav bar is a simple <code>&lt;a&gt;</code> (ie there are no lists involved).</p>
-
-<pre class="prettyprint"><code>&lt;div id="nav_container"&gt;
-    &lt;div id="nav"&gt;
-        &lt;a href="#intallation"&gt;Installation&lt;/a&gt;
-        &lt;a href="#nav2"&gt;Nav button&lt;/a&gt;
-        &lt;a href="#nav3"&gt;Nav button&lt;/a&gt;
-        &lt;a href="#nav4"&gt;Nav button&lt;/a&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="content"&gt;
-    &lt;h1&gt;&lt;a id ="installation" href="#"&gt;Installation&lt;/a&gt;&lt;/h1&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p>Note for the navigation (and its javascript) to work, each link inside the nav bar needs to be the id of an <code>&lt;a&gt;</code> tag inside a corresponding <code>h1</code>. You can link to anything else but the javascript will not auto update the current position for anything other than <code>h1</code>s. </p>
 
     </div><!--content-->
 
