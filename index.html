@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Gapp</title>
+    <link href="css/css.css" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Cuprum&v2' rel='stylesheet' type='text/css'>
+    <link href="prettify/prettify.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="nav.js"></script>
+    <script type="text/javascript" src="prettify/prettify.js"></script>
+</head>
+<body>
+
+    <header>
+        <div id="header_left">
+            <h1>Gapp</h1>
+            <h2>Make a page for your github repository</h2>
+            <p>Gapp is a simple template that you can use to create a nice looking page that showcases your repository on github. It is much faster than starting from scratch and with github pages you dont have to worry about hosting.</p>
+        </div>
+        <div id="header_right">
+            <a href="#" class="button">Download</a>
+            <a href="#" class="button">View on Github</a>
+        </div>
+    </header>
+
+    <div id="nav_container">
+        <div id="nav">
+            <a href="#introduction">Introduction</a>
+            <a href="#getstarted">Get Started</a>
+            <a href="#layout">Layout</a>
+            <a href="#code">Code</a>
+            <a href="#header">Header</a>
+            <a href="#navigation">Navigation</a>
+        </div><!--nav-->
+    </div>
+
+    <div id="content">
+
+<h1><a id="introduction" href="#introduction">Introduction</a></h1>
+
+<p>Gapp was made to let anyone quickly make a page which describes what their script/app does. You can basically put your <code>README</code> file here by manually converting the markdown into html by using something like <a href="http://showdown.im">showdown</a> or <a href="http://johnmacfarlane.net/pandoc/index.html">pandoc</a>. Note you will need to make a few changes to get the navigation to work.</p>
+
+<p>The css for Gapp in written in <a href="http://lesscss.org">LESS</a>, the source is available under the css folder.</p>
+
+<h1><a id="getstarted" href="#getstarted">Get Started</a></h1>
+
+<p>Just <code>git clone</code> <a href="http://github.com">the repository</a> or <a href="http://github.com">download it</a>. The master branch has a sample index.html, css files and a javascript file.</p>
+
+<h1><a id="layout" href="#layout">Layout</a></h1>
+
+<p>The page is made up of three sections - Header, navigation and content. Both the header and navigation are optional.</p>
+
+<pre class="prettyprint"><code>&lt;header&gt;
+&lt;/header&gt;
+&lt;div id="nav_container"&gt;
+&lt;/div&gt;
+&lt;div id="content"&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p class="whole_line">The page layout is designed for readability. By default, all text wrapped in <code>&lt;p&gt;</code> tags are on the left half of the page and all code wrapped in <code>&lt;pre&gt;</code> tags are on the right side. If you want a paragraph to go for the entire length of the page add the class <code>&lt;p class="whole_line"&gt;</code>.</p>
+
+<p><strong>Typography:</strong></p>
+
+<h1>This is a header 1</h1>
+
+<h2>This is a header 2</h2>
+
+<h3>This is a header 3</h3>
+
+<h4>This is a header 4</h4>
+
+<h5>This is a header 5</h5>
+
+<h6>This is a header 6</h6>
+
+<h1><a id="code" href="#code">Code</a></h1>
+
+<p>There are two ways of displaying code:</p>
+
+<p><strong><code>&lt;code&gt;</code></strong>: This is for displaying code in line with the paragraph and <code>look like this</code>.</p>
+
+<p><strong><code>&lt;pre&gt;</code></strong>: This is to display code on the right side.</p>
+
+<pre><code>This is what a pre looks like
+</code></pre>
+
+<p>If you want the <code>&lt;pre&gt;</code> to go for the entire width of the page, add the class <code>whole_line</code> to it: <code>&lt;pre class="whole_line"&gt;</code></p>
+
+<pre class="whole_line">
+This pre goes for the whole line
+</pre>
+
+<p class="whole_line">Lastly, if you want syntax highlighting on your code, you need to add the class  <code>&lt;pre class="prettyprint"&gt;</code>. This uses <a href="http://code.google.com/p/google-code-prettify">google-code-prettify</a>. </p>
+
+<p class="whole_line">I have used the <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/styles/sunburst.css">sunburst theme</a> for prettify. The code that initializes prettify is inside <code>nav.js</code>. </p>
+
+<h1><a id="header" href="#header">Header</a></h1>
+
+<p>The header is where you have all the basic information about your repository. It is wrapped inside <code>&lt;header&gt;</code> tags. It is split into two sections: <code>&lt;div id="header_left"&gt;</code> and <code>&lt;div id="header_right"&gt;</code>.</p>
+
+<pre class="prettyprint"><code>&lt;header&gt;
+    &lt;div id="header_left"&gt;
+    ...
+    &lt;/div&gt;
+    &lt;div id="header_right"&gt;
+    ...
+    &lt;/div&gt;
+&lt;/header&gt;
+</code></pre>
+
+<p>Header left is where you have the name, sub heading and a little description of your repository.</p>
+
+<pre class="prettyprint"><code>&lt;div id="header_left"&gt;
+    &lt;h1&gt;Repository Name Here&lt;/h1&gt;
+    &lt;h2&gt;Optional sub heading&lt;/h2&gt;
+    &lt;p&gt;A description of your repository&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Header right is where you have a button to your repository and a download link. Each button is a simple <code>&lt;a class="button"&gt;</code> tag.</p>
+
+<pre class="prettyprint"><code>&lt;div id="header_right"&gt;
+    &lt;a href="https://github.com/username/repo-name/zipball/master"&gt;Download&lt;/a&gt;
+    &lt;a href="https://github.com/username/repo-name/"&gt;View on Github&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h1><a id="navigation" href="#navigation">Navigation</a></h1>
+
+<p>The navigation bar combined with its javascript counterpart <code>nav.js</code> works as a detachable bar that auto updates the current position. It consists of two divs: <code>#nav_container</code> and <code>#nav</code>. Each link inside the nav bar is a simple <code>&lt;a&gt;</code> (ie there are no lists involved).</p>
+
+<pre class="prettyprint"><code>&lt;div id="nav_container"&gt;
+    &lt;div id="nav"&gt;
+        &lt;a href="#intallation"&gt;Installation&lt;/a&gt;
+        &lt;a href="#nav2"&gt;Nav button&lt;/a&gt;
+        &lt;a href="#nav3"&gt;Nav button&lt;/a&gt;
+        &lt;a href="#nav4"&gt;Nav button&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="content"&gt;
+    &lt;h1&gt;&lt;a id ="installation" href="#"&gt;Installation&lt;/a&gt;&lt;/h1&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Note for the navigation (and its javascript) to work, each link inside the nav bar needs to be the id of an <code>&lt;a&gt;</code> tag inside a corresponding <code>h1</code>. You can link to anything else but the javascript will not auto update the current position for anything other than <code>h1</code>s. </p>
+
+    </div><!--content-->
+
+</body>
+</html>
