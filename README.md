@@ -6,7 +6,7 @@ Gapp was made to let anyone quickly make a page which describes what their scrip
 The css for Gapp in written in [LESS](http://lesscss.org), the source is available under the css folder.
 
 #Get Started
-Just `git clone` [the repository](http://github.com) or [download it](http://github.com). The master branch has a sample index.html, css files and a javascript file.
+Just `git clone` [the repository](https://github.com/nhoss2/gapp) or [download it](http://github.com/nhoss2/gapp/zipball/master). The master branch has a sample index.html, css files and a javascript file.
 
 #Layout
 The page is made up of three sections - Header, navigation and content. Both the header and navigation are optional.
